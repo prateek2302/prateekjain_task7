@@ -1,0 +1,226 @@
+/* CSS Variables & Global Resets */
+:root {
+  --primary-blue: #00a8ff;
+  --dark-text: #2f3640;
+  --muted-text: #718093;
+  --bg-light: #ffffff;
+  --badge-bg: #dff9fb;
+  --badge-text: #00a8ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--dark-text);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+/* ===================================================
+   Navbar (Desktop Default)
+   =================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 4rem;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e272e;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted-text);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-blue);
+}
+
+.user-badge {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 0.45rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ===================================================
+   Hero Section (Desktop Default)
+   =================================================== */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 1.2rem;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: var(--primary-blue);
+}
+
+.hero-content p {
+  color: var(--muted-text);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  padding: 0.85rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(0, 168, 255, 0.35);
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0097e6;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===================================================
+   Tablet View (<= 768px)
+   =================================================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  /* Task: Text size for lists, logo, and username gets smaller in tablet */
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .user-badge {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.9rem;
+  }
+
+  /* Task: Reduce text sizes and image sizes */
+  .hero {
+    padding: 2.5rem 2rem;
+    gap: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    max-width: 380px;
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-img {
+    max-width: 85%;
+  }
+}
+
+/* ===================================================
+   Mobile View (<= 480px)
+   =================================================== */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.85rem 1.2rem;
+  }
+
+  /* Task: Hide the links in the mobile view, just show logo & username */
+  .nav-links {
+    display: none;
+  }
+
+  /* Task: Try using flex direction column */
+  .hero {
+    flex-direction: column;
+    text-align: left;
+    padding: 2rem 1.25rem;
+    gap: 2.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.65rem;
+  }
+
+  .hero-content p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-img {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+}
